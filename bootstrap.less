@@ -65,7 +65,7 @@
 
 .clearfix {
 	zoom: 1;
-	
+
 	&:after {
 		display: block;
 		visibility: hidden;
@@ -78,7 +78,7 @@
 // center-align a block level element
 // ----------------------------------
 
-.center-block { 
+.center-block {
 	display: block;
 	margin: 0 auto;
 }
@@ -127,21 +127,21 @@
 		font-weight: @weight;
 		line-height: @lineHeight;
 	}
-	
+
 	.sans-serif(@weight: normal, @size: 14px, @lineHeight: 20px) {
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: @size;
 		font-weight: @weight;
 		line-height: @lineHeight;
 	}
-	
+
 	.serif(@weight: normal, @size: 14px, @lineHeight: 20px) {
 		font-family: "Georgia", Times New Roman, Times, sans-serif;
 		font-size: @size;
 		font-weight: @weight;
 		line-height: @lineHeight;
 	}
-	
+
 	.monospace(@weight: normal, @size: 12px, @lineHeight: 20px) {
 		font-family: "Monaco", Courier New, monospace;
 		font-size: @size;
@@ -260,8 +260,8 @@
 	-ms-transition: @transition;
 	-khtml-transition: @transition;
 	transition: @transition;
-	
-	-webkit-transition-delay: @delay; 
+
+	-webkit-transition-delay: @delay;
 	-moz-transition-delay: @delay;
 	-o-transition-delay: @delay;
 	-ms-transition-delay: @delay;
@@ -274,27 +274,38 @@
 
 .content-columns(@columnCount, @columnGap: 20px) {
 	-webkit-column-count: @columnCount;
-	-webkit-column-gap: @columnGap;
 	-moz-column-count: @columnCount;
-	-moz-column-gap: @columnGap;
+	-o-column-count: @columnCount;
+	-ms-column-count: @columnCount;
+	-khtml-column-count: @columnCount;
 	column-count: @columnCount;
+
+	-webkit-column-gap: @columnGap;
+	-moz-column-gap: @columnGap;
+	-o-column-gap: @columnGap;
+	-ms-column-gap: @columnGap;
+	-khtml-column-gap: @columnGap;
 	column-gap: @columnGap;
 }
 
 // buttons
 // -------
+
 .button(@color: #f5f5f5, @textColor: #333, @textShadow: 0 1px 1px rgba(255,255,255,.75), @fontSize: 13px, @padding: 9px 15px 10px, @borderRadius: 6px) {
 	display: inline-block;
-	#gradient > .vertical(@color,darken(saturate(@color,10),10));
 	padding: @padding;
 	text-shadow: @textShadow;
 	color: @textColor;
 	font-size: @fontSize;
 	line-height: 20px;
-	.border-radius(@borderRadius);
+
+	#gradient > .vertical(@color,darken(saturate(@color,10),10));
+
 	@shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 0 rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.25);
+
+	.border-radius(@borderRadius);
 	.box-shadow(@shadow);
-	
+
 	&:hover {
 		background-position: 0 -15px;
 		color: @textColor;
@@ -303,14 +314,14 @@
 }
 
 // add an alphatransparency value to any background or border color
-// (via Elyse Holladay)
 // ----------------------------------------------------------------
+// (via Elyse Holladay)
 
 #translucent {
 	.background(@color: @white, @alpha: 1) {
 		background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
 	}
-	
+
 	.border(@color: @white, @alpha: 1) {
 		border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
 		background-clip: padding-box;
@@ -324,40 +335,41 @@
 	.horizontal (@startColor: #555, @endColor: #333) {
 		background-color: @endColor;
 		background-repeat: repeat-x;
-		background-image: -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor)); /* Konqueror */
-		background-image: -moz-linear-gradient(left, @startColor, @endColor); /* FF 3.6+ */
-		background-image: -ms-linear-gradient(left, @startColor, @endColor); /* IE10 */
 		background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor)); /* Safari 4+, Chrome 2+ */
 		background-image: -webkit-linear-gradient(left, @startColor, @endColor); /* Safari 5.1+, Chrome 10+ */
+		background-image: -moz-linear-gradient(left, @startColor, @endColor); /* FF 3.6+ */
 		background-image: -o-linear-gradient(left, @startColor, @endColor); /* Opera 11.10 */
+		background-image: -ms-linear-gradient(left, @startColor, @endColor); /* IE10 */
+		background-image: -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor)); /* Konqueror */
 		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor)); /* IE6 & IE7 */
 		-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor); /* IE8+ */
 		background-image: linear-gradient(left, @startColor, @endColor); /* the standard */
 	}
-	
+
 	.vertical (@startColor: #555, @endColor: #333) {
 		background-color: @endColor;
 		background-repeat: repeat-x;
-		background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor)); /* Konqueror */
-		background-image: -moz-linear-gradient(@startColor, @endColor); /* FF 3.6+ */
-		background-image: -ms-linear-gradient(@startColor, @endColor); /* IE10 */
 		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor)); /* Safari 4+, Chrome 2+ */
 		background-image: -webkit-linear-gradient(@startColor, @endColor); /* Safari 5.1+, Chrome 10+ */
+		background-image: -moz-linear-gradient(@startColor, @endColor); /* FF 3.6+ */
 		background-image: -o-linear-gradient(@startColor, @endColor); /* Opera 11.10 */
+		background-image: -ms-linear-gradient(@startColor, @endColor); /* IE10 */
+		background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor)); /* Konqueror */
 		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); /* IE6 & IE7 */
 		-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor); /* IE8+ */
 		background-image: linear-gradient(@startColor, @endColor); /* the standard */
 	}
-	
+
 	.directional (@startColor: #555, @endColor: #333, @deg: 45deg) {
 		background-color: @endColor;
 		background-repeat: repeat-x;
-		background-image: -moz-linear-gradient(@deg, @startColor, @endColor); /* FF 3.6+ */
-		background-image: -ms-linear-gradient(@deg, @startColor, @endColor); /* IE10 */
 		background-image: -webkit-linear-gradient(@deg, @startColor, @endColor); /* Safari 5.1+, Chrome 10+ */
+		background-image: -moz-linear-gradient(@deg, @startColor, @endColor); /* FF 3.6+ */
 		background-image: -o-linear-gradient(@deg, @startColor, @endColor); /* Opera 11.10 */
+		background-image: -ms-linear-gradient(@deg, @startColor, @endColor); /* IE10 */
 		background-image: linear-gradient(@deg, @startColor, @endColor); /* the standard */
 	}
+
 	.vertical-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 0.5, @endColor: #c3325f) {
 		background-color: @endColor;
 		background-repeat: no-repeat;
@@ -382,58 +394,79 @@
 
 #flexbox {
 	// #flexbox > .display-box; must be used along with other flexbox mixins
-	.display-box { 
+	.display-box {
 		display: -moz-box;
 		display: -webkit-box;
 		display: box;
 	}
-	
+
 	// box align [ start | end | center | baseline | stretch ]
 	.box-align(@alignment: stretch) {
-		-moz-box-align: @alignment;
 		-webkit-box-align: @alignment;
+		-moz-box-align: @alignment;
+		-o-box-align: @alignment;
+		-ms-box-align: @alignment;
+		-khtml-box-align: @alignment;
 		box-align: @alignment;
 	}
-	
+
 	// box direction [ normal | reverse | inherit ]
 	.box-direction(@direction: normal) {
-		-moz-box-direction: @direction;
 		-webkit-box-direction: @direction;
+		-moz-box-direction: @direction;
+		-o-box-direction: @direction;
+		-ms-box-direction: @direction;
+		-khtml-box-direction: @direction;
 		box-direction: @direction;
 	}
-	
+
 	// box flex [ integer ]
 	.box-flex(@flex: 0) {
-		-moz-box-flex: @flex;
 		-webkit-box-flex: @flex;
+		-moz-box-flex: @flex;
+		-o-box-flex: @flex;
+		-ms-box-flex: @flex;
+		-khtml-box-flex: @flex;
 		box-flex: @flex;
 	}
-	
+
 	// box flex group [ integer ]
 	.box-flex-group(@group: 1) {
-		-moz-box-flex-group: @group;
 		-webkit-box-flex-group: @group;
+		-moz-box-flex-group: @group;
+		-o-box-flex-group: @group;
+		-ms-box-flex-group: @group;
+		-khtml-box-flex-group: @group;
 		box-flex-group: @group;
 	}
-	
+
 	// box orientation [ horizontal | vertical | inline-axis | block-axis | inherit ]
 	.box-orient(@orientation: horizontal) {
-		-moz-box-orient: @orientation;
 		-webkit-box-orient: @orientation;
+		-moz-box-orient: @orientation;
+		-o-box-orient: @orientation;
+		-ms-box-orient: @orientation;
+		-khtml-box-orient: @orientation;
 		box-orient: @orientation;
 	}
-	
+
 	// box ordinal group [ integer ]
 	.box-ordinal-group(@group: 1) {
-		-moz-box-ordinal-group: @group;
 		-webkit-box-ordinal-group:@group;
+		-moz-box-ordinal-group: @group;
+		-o-box-ordinal-group: @group;
+		-ms-box-ordinal-group: @group;
+		-khtml-box-ordinal-group: @group;
 		box-flex-ordinal-group: @group;
 	}
-	
+
 	// box pack  [ start | end | center | justify ]
 	.box-pack(@pack: start) {
-		-moz-box-pack: @pack;
 		-webkit-box-pack: @pack;
+		-moz-box-pack: @pack;
+		-o-box-pack: @pack;
+		-ms-box-pack: @pack;
+		-khtml-box-pack: @pack;
 		box-pack: @pack;
 	}
 }
@@ -444,7 +477,7 @@
 /* = Reset = */
 /* ========= */
 
-// based on Eric Meyers' reset 2.0 - http://meyerweb.com/eric/tools/css/reset/index.html 
+// based on Eric Meyers' reset 2.0 - http://meyerweb.com/eric/tools/css/reset/index.html
 // & the Compass Reset utility - http://compass-style.org/reference/compass/reset/utilities/
 
 #reset {
@@ -458,91 +491,92 @@
 		dl, dt, dd, ol, ul, li,
 		fieldset, form, label, legend,
 		table, caption, tbody, tfoot, thead, tr, th, td,
-		article, aside, canvas, details, embed, 
-		figure, figcaption, footer, header, hgroup, 
+		article, aside, canvas, details, embed,
+		figure, figcaption, footer, header, hgroup,
 		menu, nav, output, ruby, section, summary,
 		time, mark, audio, video {
 			#reset > .reset-box-model;
-			#reset > .reset-font; 
+			#reset > .reset-font;
 		}
-		
+
 		body {
-			#reset > .reset-body; 
+			#reset > .reset-body;
 		}
-		
+
 		ol, ul {
-			#reset > .reset-list-style; 
+			#reset > .reset-list-style;
 		}
-		
+
 		table {
-			#reset > .reset-table; 
+			#reset > .reset-table;
 		}
-		
+
 		caption, th, td {
-			#reset > .reset-table-cell; 
+			#reset > .reset-table-cell;
 		}
-		
+
 		q, blockquote {
-			#reset > .reset-quotation; 
+			#reset > .reset-quotation;
 		}
-		
+
 		a img {
-			#reset > .reset-image-anchor-border; 
+			#reset > .reset-image-anchor-border;
 		}
-		
+
 		#reset > .reset-html5;
 	}
-	
+
 	.reset-box-model {
 		margin: 0;
 		padding: 0;
-		border: 0; 
+		border: 0;
 	}
-	
+
 	.reset-font {
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
 	}
-	
+
 	.reset-focus {
 		outline: 0;
 	}
-	
+
 	.reset-body {
 		line-height: 1;
 	}
-	
+
 	.reset-list-style {
 		list-style: none;
 	}
-	
+
 	.reset-table {
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
-	
+
 	.reset-table-cell {
 		text-align: left;
 		font-weight: normal;
 		vertical-align: middle;
 	}
-	
+
 	.reset-quotation {
 		quotes: none;
-		
+
 		&:before, &:after {
-			content: ""; 
+			content: "";
 			content: none;
 		}
 	}
-	
+
 	.reset-image-anchor-border {
 		border: none;
 	}
-	
+
 	.reset-html5 {
-		article, aside, details, figcaption, figure, 
+		article, aside, details, figcaption, figure,
+
 		footer, header, hgroup, menu, nav, section {
 			display: block;
 		}
