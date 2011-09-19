@@ -144,6 +144,13 @@
 	transition: @transition;
 }
 
+.appear-transition(@fade: opacity 0.9s, @delay: 0.5s) {
+	-webkit-transition: @fade;
+	-moz-transition: @fade;
+	-webkit-transition-delay: @delay; 
+	-moz-transition-delay: @delay;
+}
+
 // CSS3 Content Columns
 .content-columns(@columnCount, @columnGap: 20px) {
 	-webkit-column-count: @columnCount;
