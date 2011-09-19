@@ -65,6 +65,7 @@
 
 .clearfix {
 	zoom: 1;
+	
 	&:after {
 		display: block;
 		visibility: hidden;
@@ -186,14 +187,26 @@
 .transition(@transition) {
 	-webkit-transition: @transition;
 	-moz-transition: @transition;
+	-o-transition: @transition;
+	-ms-transition: @transition;
+	-khtml-transition: @transition;
 	transition: @transition;
 }
 
-.appear-transition(@fade: opacity 0.9s, @delay: 0.5s) {
-	-webkit-transition: @fade;
-	-moz-transition: @fade;
+.appear-transition(@transition: opacity 0.9s, @delay: 0.5s) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	-o-transition: @transition;
+	-ms-transition: @transition;
+	-khtml-transition: @transition;
+	transition: @transition;
+	
 	-webkit-transition-delay: @delay; 
 	-moz-transition-delay: @delay;
+	-o-transition-delay: @delay;
+	-ms-transition-delay: @delay;
+	-khtml-transition-delay: @delay;
+	transition-delay: @delay;
 }
 
 // css3 content columns
