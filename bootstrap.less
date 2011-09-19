@@ -99,10 +99,19 @@
 // ----------------------
 
 .placeholder(@color: @grayLight) {
-	:-moz-placeholder {
+	:-webkit-placeholder,
+	:-moz-placeholder,
+	:-o-placeholder,
+	:-ms-placeholder {
 		color: @color;
 	}
-	::-webkit-input-placeholder {
+
+	::-webkit-input-placeholder,
+	::-moz-input-placeholder,
+	::-o-input-placeholder,
+	::-ms-input-placeholder,
+	::-khtml-input-placeholder,
+	::input-placeholder {
 		color: @color;
 	}
 }
