@@ -1,5 +1,5 @@
 /*
-	Bootstrap v2.0.2
+	Bootstrap v2.1.0
 	----------------
 	
 	Variables and mixins to bootstrap any new web development project.
@@ -7,7 +7,7 @@
 	Original:
 		- Mark Otto (http://markdotto.com/bootstrap)
 	
-	Fork by:
+	Fork and addons by:
 		- Vaclav Vancura / SAY Media (vvancura@saymedia.com)
 		- Alex Schleifer / SAY Media (alexoid@saymedia.com)
 */
@@ -235,6 +235,15 @@
 	box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 }
 
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+	-webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	-o-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	-ms-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	-kthml-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+
 // borders
 // -------
 
@@ -249,8 +258,8 @@
 	border: 1px red dotted;
 }
 
-// rotation
-// --------
+// transforms
+// ----------
 
 .rotation(@deg: 5deg) {
 	-webkit-transform: rotate(@deg);
@@ -259,6 +268,15 @@
 	-ms-transform: rotate(@deg);
 	-khtml-transform: rotate(@deg);
 	transform: rotate(@deg);
+}
+
+.scale(@ratio: 1.5){
+	-webkit-transform: scale(@ratio);
+	-moz-transform: scale(@ratio);
+	-o-transform: scale(@ratio);
+	-ms-transform: scale(@ratio);
+	-khtml-transform: scale(@ratio);
+	transform: scale(@ratio);
 }
 
 // transitions
@@ -287,6 +305,27 @@
 	-ms-transition-delay: @delay;
 	-khtml-transition-delay: @delay;
 	transition-delay: @delay;
+}
+
+.transition-duration(@duration: 0.2s) {
+	-webkit-transition-duration: @duration;
+	-moz-transition-duration: @duration;
+	-o-transition-duration: @duration;
+	-ms-transition-duration: @duration;
+	-khtml-transition-duration: @duration;
+	transition-duration: @duration;
+}
+
+// translate
+// ---------
+
+.translate(@x:0, @y:0) {
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	-khtml-transform: translate(@x, @y);
+	transform: translate(@x, @y);
 }
 
 // css3 content columns
