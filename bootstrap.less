@@ -65,14 +65,6 @@
 @globalLineHeight:  1.618em;
 @hairline:          0.075em;
 
-// griditude
-// ---------
-
-@gridColumns:       16;
-@gridColumnWidth:   4em;
-@gridGutterWidth:   2em;
-@siteWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
-
 
 
 /* ========== */
@@ -173,17 +165,24 @@
 // grid system
 // -----------
 
-.column-container {
-	width: @siteWidth;
-	margin: 0 auto;
+.column-container(@gridColumns: 16, @gridColumnWidth: 4em, @gridGutterWidth: 2em) {
 	.clearfix;
+	
+	width: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+	margin: 0 auto;
+}
+
+.column-width(@width: 100px) {
+	display: inline;
+	float: left;
+	width: @width;
 }
 
 .columns(@columnSpan: 1) {
-	display: inline;
-	float: left;
-	width: (@gridColumnWidth * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1));
+	.column-width((@gridColumnWidth * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1)));
+	
 	margin-left: @gridGutterWidth;
+	
 	&:first-child {
 		margin-left: 0;
 	}
