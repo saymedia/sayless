@@ -202,6 +202,42 @@
 	-ms-border-radius: @radius;
 	-khtml-border-radius: @radius;
 	border-radius: @radius;
+	
+	.bleedfix;
+}
+
+.border-radiuses(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+	-webkit-border-top-right-radius: @topright;
+	-webkit-border-bottom-right-radius: @bottomright;
+	-webkit-border-bottom-left-radius: @bottomleft;
+	-webkit-border-top-left-radius: @topleft;
+	
+	-moz-border-radius-topright: @topright;
+	-moz-border-radius-bottomright: @bottomright;
+	-moz-border-radius-bottomleft: @bottomleft;
+	-moz-border-radius-topleft: @topleft;
+	
+	-o-border-radius-topright: @topright;
+	-o-border-radius-bottomright: @bottomright;
+	-o-border-radius-bottomleft: @bottomleft;
+	-o-border-radius-topleft: @topleft;
+	
+	-ms-border-radius-topright: @topright;
+	-ms-border-radius-bottomright: @bottomright;
+	-ms-border-radius-bottomleft: @bottomleft;
+	-ms-border-radius-topleft: @topleft;
+	
+	-khtml-border-radius-topright: @topright;
+	-khtml-border-radius-bottomright: @bottomright;
+	-khtml-border-radius-bottomleft: @bottomleft;
+	-khtml-border-radius-topleft: @topleft;
+	
+	border-top-right-radius: @topright;
+	border-bottom-right-radius: @bottomright;
+	border-bottom-left-radius: @bottomleft;
+	border-top-left-radius: @topleft;
+	
+	.bleedfix;
 }
 
 // bleeding box fix
@@ -209,8 +245,11 @@
 // http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
 // Has to be used after all other background shortcodes
 
-.bleeding-fix {
+.bleedfix {
 	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box; 
+}
 }
 
 // drop shadows
