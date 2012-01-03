@@ -344,7 +344,7 @@
 // transitions
 // -----------
 
-.transition(@transition: all ease-in-out .2s) {
+.transition(@transition: all ease-in-out 0.2s) {
 	-webkit-transition: @transition;
 	-moz-transition: @transition;
 	-o-transition: @transition;
@@ -376,6 +376,15 @@
 	-ms-transition-duration: @duration;
 	-khtml-transition-duration: @duration;
 	transition-duration: @duration;
+}
+
+.transition-delay(@delay: 0.5s) {
+	-webkit-transition-delay: @delay;
+	-moz-transition-delay: @delay;
+	-o-transition-delay: @delay;
+	-ms-transition-delay: @delay;
+	-khtml-transition-delay: @delay;
+	transition-delay: @delay;
 }
 
 // translate
