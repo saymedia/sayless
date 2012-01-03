@@ -525,8 +525,11 @@
 #flexbox {
 	// #flexbox > .display-box; must be used along with other flexbox mixins
 	.display-box {
-		display: -moz-box;
 		display: -webkit-box;
+		display: -moz-box;
+		display: -o-box;
+		display: -ms-box;
+		display: -khtml-box;
 		display: box;
 	}
 
