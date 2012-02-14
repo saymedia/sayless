@@ -1,12 +1,12 @@
 /*
 	Bootstrap v3.0.0
 	----------------
-	
+
 	Variables and mixins to bootstrap any new web development project.
-	
+
 	Original:
 		- Mark Otto (http://markdotto.com/bootstrap)
-	
+
 	Fork and addons by:
 		- Vaclav Vancura / SAY Media (vvancura@saymedia.com)
 		- Alex Schleifer / SAY Media (alexoid@saymedia.com)
@@ -167,7 +167,7 @@
 
 .column-container(@gridColumns: 16, @gridColumnWidth: 4em, @gridGutterWidth: 2em) {
 	.clearfix;
-	
+
 	width: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 	margin: 0 auto;
 }
@@ -180,9 +180,9 @@
 
 .columns(@columnSpan: 1) {
 	.column-width((@gridColumnWidth * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1)));
-	
+
 	margin-left: @gridGutterWidth;
-	
+
 	&:first-child {
 		margin-left: 0;
 	}
@@ -202,7 +202,7 @@
 	-ms-border-radius: @radius;
 	-khtml-border-radius: @radius;
 	border-radius: @radius;
-	
+
 	.bleedfix;
 }
 
@@ -211,32 +211,32 @@
 	-webkit-border-bottom-right-radius: @bottomright;
 	-webkit-border-bottom-left-radius: @bottomleft;
 	-webkit-border-top-left-radius: @topleft;
-	
+
 	-moz-border-radius-topright: @topright;
 	-moz-border-radius-bottomright: @bottomright;
 	-moz-border-radius-bottomleft: @bottomleft;
 	-moz-border-radius-topleft: @topleft;
-	
+
 	-o-border-radius-topright: @topright;
 	-o-border-radius-bottomright: @bottomright;
 	-o-border-radius-bottomleft: @bottomleft;
 	-o-border-radius-topleft: @topleft;
-	
+
 	-ms-border-radius-topright: @topright;
 	-ms-border-radius-bottomright: @bottomright;
 	-ms-border-radius-bottomleft: @bottomleft;
 	-ms-border-radius-topleft: @topleft;
-	
+
 	-khtml-border-radius-topright: @topright;
 	-khtml-border-radius-bottomright: @bottomright;
 	-khtml-border-radius-bottomleft: @bottomleft;
 	-khtml-border-radius-topleft: @topleft;
-	
+
 	border-top-right-radius: @topright;
 	border-bottom-right-radius: @bottomright;
 	border-bottom-left-radius: @bottomleft;
 	border-top-left-radius: @topleft;
-	
+
 	.bleedfix;
 }
 
@@ -248,7 +248,7 @@
 .bleedfix {
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
-	background-clip: padding-box; 
+	background-clip: padding-box;
 }
 
 // don't allow to select text
@@ -323,7 +323,7 @@
 // transforms
 // ----------
 
-.rotation(@deg: 5deg) {
+.transform-rotation(@deg: 5deg) {
 	-webkit-transform: rotate(@deg);
 	-moz-transform: rotate(@deg);
 	-o-transform: rotate(@deg);
@@ -332,7 +332,7 @@
 	transform: rotate(@deg);
 }
 
-.scale(@ratio: 1.5){
+.transform-scale(@ratio: 1.5) {
 	-webkit-transform: scale(@ratio);
 	-moz-transform: scale(@ratio);
 	-o-transform: scale(@ratio);
