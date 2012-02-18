@@ -293,13 +293,22 @@
 	box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 }
 
-.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+.inner-shadow(@horizontal: 0, @vertical: 1px, @blur: 2px, @alpha: 0.4) {
 	-webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
 	-moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
 	-o-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
 	-ms-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
 	-kthml-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
 	box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+
+.box-shadows-2(@shadow1: 0px 1px 2px @black33, @shadow2: 0px 0px 20px @black5 inset) {
+	-webkit-box-shadow: @shadow1, @shadow2;
+	-moz-box-shadow: @shadow1, @shadow2;
+	-o-box-shadow: @shadow1, @shadow2;
+	-ms-box-shadow: @shadow1, @shadow2;
+	-khtml-box-shadow: @shadow1, @shadow2;
+	box-shadow: @shadow1, @shadow2;
 }
 
 // borders
