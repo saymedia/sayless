@@ -1,12 +1,12 @@
 /*
     Bootstrap v2.2.0
     ----------------
-    
+
     Style addons.
-    
+
     Original:
         - Mark Otto (http://markdotto.com/bootstrap)
-    
+
     Fork and addons by:
         - Vaclav Vancura / SAY Media (vvancura@saymedia.com)
         - Alex Schleifer / SAY Media (alexoid@saymedia.com)
@@ -132,15 +132,22 @@
         input:invalid, textarea:invalid {
             background-color: #f0dddd;
         }
-        
-        sup {
-            vertical-align: super;
-            font-size: smaller;
-        }
-        
+
+        sup,
         sub {
-            vertical-align: sub;
-            font-size: smaller;
+            height: 0;
+            line-height: 1;
+            vertical-align: baseline;
+            _vertical-align: bottom;
+            position: relative;
+   	    }
+
+        sup {
+            bottom: 1ex;
+        }
+
+        sub {
+            top: .5ex;
         }
     }
 }
