@@ -64,9 +64,9 @@
 // baseline grid
 // -------------
 
-@baseline:          1em;
-@globalLineHeight:  1.618em;
-@hairline:          0.075em;
+@baseline:          1rem;
+@globalLineHeight:  1.618rem;
+@hairline:          0.075rem;
 
 
 
@@ -100,12 +100,12 @@
 // sizing shortcuts
 // ----------------
 
-.size(@height: 1em, @width: 1em) {
+.size(@height: 1rem, @width: 1rem) {
 	height: @height;
 	width: @width;
 }
 
-.square(@size: 1em) {
+.square(@size: 1rem) {
 	.size(@size, @size);
 }
 
@@ -136,27 +136,27 @@
 // note: keep site-specific properties out of the bootstrap.less file!
 
 #font {
-	.shorthand(@weight: normal, @size: 1em, @lineHeight: @globalLineHeight) {
+	.shorthand(@weight: normal, @size: 1rem, @lineHeight: @globalLineHeight) {
 		font-size: @size;
 		font-weight: @weight;
 		line-height: @lineHeight;
 	}
 
-	.sans-serif(@weight: normal, @size: 1em, @lineHeight: @globalLineHeight) {
+	.sans-serif(@weight: normal, @size: 1rem, @lineHeight: @globalLineHeight) {
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: @size;
 		font-weight: @weight;
 		line-height: @lineHeight;
 	}
 
-	.serif(@weight: normal, @size: 1em, @lineHeight: @globalLineHeight) {
+	.serif(@weight: normal, @size: 1rem, @lineHeight: @globalLineHeight) {
 		font-family: "Georgia", Times New Roman, Times, sans-serif;
 		font-size: @size;
 		font-weight: @weight;
 		line-height: @lineHeight;
 	}
 
-	.monospace(@weight: normal, @size: 1em, @lineHeight: @globalLineHeight) {
+	.monospace(@weight: normal, @size: 1rem, @lineHeight: @globalLineHeight) {
 		font-family: "Monaco", Courier New, monospace;
 		font-size: @size;
 		font-weight: @weight;
@@ -168,7 +168,7 @@
 // grid system
 // -----------
 
-.column-container(@gridColumns: 16, @gridColumnWidth: 4em, @gridGutterWidth: 2em) {
+.column-container(@gridColumns: 16, @gridColumnWidth: 4rem, @gridGutterWidth: 2rem) {
 	width: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 	margin: 0 auto;
 
@@ -198,7 +198,7 @@
 // border radius
 // -------------
 
-.border-radius(@radius: 1em) {
+.border-radius(@radius: 1rem) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
 	-o-border-radius: @radius;
@@ -287,7 +287,7 @@
 // drop shadows
 // ------------
 
-.box-shadow(@shadow: 0 0.33em 0.33em @black25) {
+.box-shadow(@shadow: 0 0.33rem 0.33rem @black25) {
 	-webkit-box-shadow: @shadow;
 	-moz-box-shadow: @shadow;
 	-o-box-shadow: @shadow;
@@ -296,7 +296,7 @@
 	box-shadow: @shadow;
 }
 
-.drop-shadow(@x-axis: 0, @y-axis: 0.33em, @blur: 0.33em, @alpha: 0.25) {
+.drop-shadow(@x-axis: 0, @y-axis: 0.33rem, @blur: 0.33rem, @alpha: 0.25) {
 	-webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 	-moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 	-o-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
@@ -423,7 +423,7 @@
 // css3 content columns
 // --------------------
 
-.content-columns(@columnCount, @columnGap: 1em) {
+.content-columns(@columnCount, @columnGap: 1rem) {
 	-webkit-column-count: @columnCount;
 	-moz-column-count: @columnCount;
 	-o-column-count: @columnCount;
@@ -442,7 +442,7 @@
 // buttons
 // -------
 
-.button(@color: #f5f5f5, @textColor: #333, @textShadow: 0 @hairline @hairline @white75, @fontSize: 1em, @padding: 1em 2em, @borderRadius: 1em) {
+.button(@color: #f5f5f5, @textColor: #333, @textShadow: 0 @hairline @hairline @white75, @fontSize: 1rem, @padding: 1rem 2rem, @borderRadius: 1rem) {
 	display: inline-block;
 	padding: @padding;
 	text-shadow: @textShadow;
@@ -452,13 +452,13 @@
 
 	#gradient > .vertical(@color,darken(saturate(@color,10),10));
 
-	@shadow: inset 0 @hairline 0 @white25, inset 0 -@hairline 0 @black25, 0 @hairline 0.2em @black25;
+	@shadow: inset 0 @hairline 0 @white25, inset 0 -@hairline 0 @black25, 0 @hairline 0.2rem @black25;
 
 	.border-radius(@borderRadius);
 	.box-shadow(@shadow);
 
 	&:hover {
-		background-position: 0 -2em;
+		background-position: 0 -2rem;
 		color: @textColor;
 		text-decoration: none;
 	}
