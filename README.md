@@ -14,6 +14,20 @@ You may safely use this one, can be found in _master_ branch.
 Don't use right now, this may break a lot of stuff (we're switching to _rem_, _em_ is dead now -- and obviously that's a major change). You can find it in _devel_ branch.
 
 
+### How to use
+
+All you need is to import _bootstrap_ in your _.less_ file, usually the main one:
+
+    // bootstrap setup
+    @import "bootstrap/bootstrap.less";
+    @import "bootstrap/bootstrap-reset.less";
+    @import "bootstrap/bootstrap-addons.less";
+    @import "bootstrap/bootstrap-typography.less";
+    @import "bootstrap/bootstrap-print.less";
+    
+There's no need to include all files. Just use what's useful for you.
+
+
 ### Forking
 
 Fork as needed. I'd like to push back to Mark's original repo, but I think it's not possible anymore. We're just too far away.
