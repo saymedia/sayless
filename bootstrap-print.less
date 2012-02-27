@@ -19,7 +19,7 @@
 /* ========= */
 
 #print {
-    .global-print {
+    .global-print() {
         @media print {
             * {
                 background: transparent !important;
@@ -84,4 +84,4 @@
 
 
 
-#print > .global-print;
+#print > .global-print();
