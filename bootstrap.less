@@ -254,6 +254,15 @@
 	background-clip: padding-box;
 }
 
+// box sizing
+// ----------
+
+.box-sizing(@sizing: border-box) {
+	-moz-box-sizing: @sizing;
+	-webkit-box-sizing: @sizing;
+	box-sizing: @sizing;
+}
+
 // don't allow to select text
 // --------------------------
 
