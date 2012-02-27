@@ -64,6 +64,22 @@
             -ms-interpolation-mode: bicubic;
         }
 
+        // Improve image, video and canvas quality when needed
+        // Currently supported only in Gecko
+        img.hq,
+        canvas.hq,
+        video.hq {
+            image-rendering: -moz-crisp-edges;
+        }
+
+        // Improve image, video and canvas speed when needed
+        // Currently supported only in Gecko
+        img.lq,
+        canvas.lq
+        video.lq {
+            image-rendering: optimizeSpeed;
+        }
+
         // Correct overflow displayed oddly in IE9
         svg:not(:root) {
             overflow: hidden;
