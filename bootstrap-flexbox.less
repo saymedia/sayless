@@ -1,0 +1,101 @@
+/*
+    Bootstrap DEVEL
+    ---------------
+
+    Core typography.
+
+    Original:
+        - Mark Otto (http://markdotto.com/bootstrap)
+
+    Fork and addons by:
+        - Vaclav Vancura / SAY Media (vvancura@saymedia.com)
+        - Alex Schleifer / SAY Media (alexoid@saymedia.com)
+*/
+
+
+
+/* ============================ */
+/* = CSS3 flexible box module = */
+/* ============================ */
+
+#flexbox {
+    // #flexbox > .display-box; must be used along with other flexbox mixins
+    .display-box() {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -o-box;
+        display: -ms-box;
+        display: -khtml-box;
+        display: box;
+    }
+
+    // box align [ start | end | center | baseline | stretch ]
+    .box-align(@alignment: stretch) {
+        -webkit-box-align: @alignment;
+        -moz-box-align: @alignment;
+        -o-box-align: @alignment;
+        -ms-box-align: @alignment;
+        -khtml-box-align: @alignment;
+        box-align: @alignment;
+    }
+
+    // box direction [ normal | reverse | inherit ]
+    .box-direction(@direction: normal) {
+        -webkit-box-direction: @direction;
+        -moz-box-direction: @direction;
+        -o-box-direction: @direction;
+        -ms-box-direction: @direction;
+        -khtml-box-direction: @direction;
+        box-direction: @direction;
+    }
+
+    // box flex [ integer ]
+    .box-flex(@flex: 0) {
+        -webkit-box-flex: @flex;
+        -moz-box-flex: @flex;
+        -o-box-flex: @flex;
+        -ms-box-flex: @flex;
+        -khtml-box-flex: @flex;
+        box-flex: @flex;
+    }
+
+    // box flex group [ integer ]
+    .box-flex-group(@group: 1) {
+        -webkit-box-flex-group: @group;
+        -moz-box-flex-group: @group;
+        -o-box-flex-group: @group;
+        -ms-box-flex-group: @group;
+        -khtml-box-flex-group: @group;
+        box-flex-group: @group;
+    }
+
+    // box orientation [ horizontal | vertical | inline-axis | block-axis | inherit ]
+    .box-orient(@orientation: horizontal) {
+        -webkit-box-orient: @orientation;
+        -moz-box-orient: @orientation;
+        -o-box-orient: @orientation;
+        -ms-box-orient: @orientation;
+        -khtml-box-orient: @orientation;
+        box-orient: @orientation;
+    }
+
+    // box ordinal group [ integer ]
+    .box-ordinal-group(@group: 1) {
+        -webkit-box-ordinal-group:@group;
+        -moz-box-ordinal-group: @group;
+        -o-box-ordinal-group: @group;
+        -ms-box-ordinal-group: @group;
+        -khtml-box-ordinal-group: @group;
+        box-flex-ordinal-group: @group;
+    }
+
+    // box pack  [ start | end | center | justify ]
+    .box-pack(@pack: start) {
+        -webkit-box-pack: @pack;
+        -moz-box-pack: @pack;
+        -o-box-pack: @pack;
+        -ms-box-pack: @pack;
+        -khtml-box-pack: @pack;
+        box-pack: @pack;
+    }
+}
