@@ -528,12 +528,49 @@
 
 
 
-// hide text
-// ---------
+// hide text functions
+// -------------------
+
 // Kellum Method, http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 
-.hide-text() {
+// Benefits:
+// * Really long strings of text will never flow into the container because they always flow away from
+//   the container.
+// * Performance is dramatically improved because a 9999px box is not drawn. Noticeably so in animations
+//   on the iPad 1
+
+.hide-text-kellum() {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+// Nicolas Neal-Gallagher Method, http://nicolasgallagher.com/another-css-image-replacement-technique/
+
+// Benefits:
+// * Works in IE6/7 on inline-block elements. Techniques based on text indentation are basically “broken”,
+//   as shown by this test case: http://jsfiddle.net/necolas/QZvYa/show/
+// * Doesn’t result in any offscreen box being created. The text-indent methods result in a box being drawn
+//   (sometimes offscreen) for any text that have been negatively or positively indented. It can sometimes
+//   cause performance problems but the font-based method sidesteps those concerns.
+// * No need to specify a text-alignment and hide the overflow since the text is crushed to take up no space.
+// * No need to hide br or make all fallback HTML display:inline to get around the constraints of using
+//   a text indentation. This method is not affected by those problems.
+// * Fewer styles are needed as a result of these improvements
+
+// Drawbacks:
+// * Leaves a very small trace of the text in IE6.
+// * This approach means that you cannot use em units for margins on elements that make use of this image
+//   replacement code. This is because the font size is set to 0.
+// * Windows-Eyes has a bug that prevents the reading of text hidden using this method. There are no problems
+//   with all other screenreaders that have been tested. Thanks to @jkiss for providing these detailed results
+//   and to @wilto for confirming this technique works for JAWS 12 in IE 6/7/8 and Firefox 4/5/6.
+// * Like so many IR methods, it doesn’t work when CSS is loaded but images are not.
+// * Text may not be hidden if a visitor is using a user style sheet which has explicitly set important
+//   font-size declarations for the element type on which you have applied the IR class.
+
+.hide-text-nealgallagher() {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
 }
