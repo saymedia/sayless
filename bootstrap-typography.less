@@ -18,71 +18,71 @@
 /* = Core Typography = */
 /* =================== */
 
-#typography {
-    .global-typography() {
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 1em;
-            line-height: @globalLineHeight;
-            color: #333;
-        }
 
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 0.809em;
-            line-height: 1em;
-            text-rendering: optimizeLegibility;
-        }
 
-        p, ul, ol, dl, blockquote {
-            font-size: 1rem;
-            line-height: @globalLineHeight;
-            margin-bottom: @globalLineHeight;
-            max-width: 30em; // optimal width for long-form text
-        }
+@import "bootstrap.less";
 
-        ul {
-            list-style-type: disc;
-            margin-left: @globalLineHeight;
-        }
 
-        ol {
-            list-style-type: decimal;
-            margin-left: @globalLineHeight;
-        }
 
-        nav ul, nav ol {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+.global-typography() {
+    body {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1em;
+        line-height: @globalLineHeight;
+        color: #333;
+    }
 
-        b, strong {
-            font-weight: bold;
-        }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0.809em;
+        line-height: 1em;
+        text-rendering: optimizeLegibility;
+    }
 
-        i, em {
-            font-style: italic;
-        }
+    p, ul, ol, dl, blockquote {
+        font-size: 1rem;
+        line-height: @globalLineHeight;
+        margin-bottom: @globalLineHeight;
+        max-width: 30em; // optimal width for long-form text
+    }
 
-        small {
-            font-size: 80%;
-        }
+    ul {
+        list-style-type: disc;
+        margin-left: @globalLineHeight;
+    }
 
-        a, a:visited {
-            outline: none;
-            color: @linkColor;
-        }
+    ol {
+        list-style-type: decimal;
+        margin-left: @globalLineHeight;
+    }
 
-        a:hover {
-            outline: none;
-        }
+    nav ul, nav ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-        a:active, a:focus {
-            outline: none;
-        }
+    b, strong {
+        font-weight: bold;
+    }
+
+    i, em {
+        font-style: italic;
+    }
+
+    small {
+        font-size: 80%;
+    }
+
+    a, a:visited {
+        outline: none;
+        color: @linkColor;
+    }
+
+    a:hover {
+        outline: none;
+    }
+
+    a:active, a:focus {
+        outline: none;
     }
 }
-
-
-
-#typography > .global-typography();
