@@ -1,4 +1,4 @@
-Bootstrap
+SAY: LESS
 =========
 	
 Variables and mixins to bootstrap any new web development project.
@@ -16,14 +16,14 @@ Don't use right now, this may break a lot of stuff (we're switching to _rem_, _e
 
 ### How to use
 
-All you need is to import _bootstrap_ in your _.less_ file, usually the main one:
+All you need is to import _sayless_ in your _.less_ file, usually the main one:
 
-    // bootstrap setup
-    @import "bootstrap/bootstrap.less";
-    @import "bootstrap/bootstrap-reset.less";
-    @import "bootstrap/bootstrap-addons.less";
-    @import "bootstrap/bootstrap-typography.less";
-    @import "bootstrap/bootstrap-print.less";
+    // sayless setup
+    @import "sayless/sayless.less";
+    @import "sayless/sayless-reset.less";
+    @import "sayless/sayless-addons.less";
+    @import "sayless/sayless-typography.less";
+    @import "sayless/sayless-print.less";
     
 There's no need to include all files. Just use what's useful for you.
 
