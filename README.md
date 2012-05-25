@@ -1,5 +1,5 @@
-SAY: LESS
-=========
+SAY:LESS
+========
 	
 Variables and mixins to bootstrap any new web development project.
 
