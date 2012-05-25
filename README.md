@@ -4,7 +4,7 @@ SAY: LESS
 Variables and mixins to bootstrap any new web development project.
 
 
-### Current stable version: 3.0.1
+### Current stable version: 3.0.3
 
 You may safely use this one, can be found in _master_ branch.
 
