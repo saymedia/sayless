@@ -37,6 +37,37 @@
     }
 }
 
+// Jeff Starr method, http://perishablepress.com/new-clearfix-hack/
+.clearfix-starr() {
+    display: inline-block;
+
+    &:after {
+        visibility: hidden;
+       	display: block;
+       	font-size: 0;
+       	content: " ";
+       	clear: both;
+       	height: 0;
+    }
+}
+
+* html .clearfix-starr             { zoom: 1; } // IE6
+*:first-child+html .clearfix-starr { zoom: 1; } // IE7
+
+// Nicolas Gallagher micro method, http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix-micro:before,
+.clearfix-micro:after {
+    content: "";
+    display: table;
+    height: 0; // Opera
+}
+
+.clearfix-micro:after {
+    clear: both;
+}
+
+.clearfix-micro { *zoom: 1; } // IE6 + IE7
+
 
 
 // Center-align a block level element
