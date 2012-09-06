@@ -495,11 +495,15 @@
 // Opacity
 // -------
 
-.opacity(@opacity: 1) {
+.alpha(@opacity: 1) {
     filter: e(%("alpha(opacity=%d)", @opacity / 100));
     -khtml-opacity: @opacity;
     -moz-opacity: @opacity;
     opacity: @opacity;
+}
+
+.opacity(@opacity: 1) {
+    .alpha(@opacity);
 }
 
 
