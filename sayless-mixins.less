@@ -567,3 +567,26 @@
     -khtml-background-size: @size;
     background-size: @size;
 }
+
+
+// Sprites
+// -------
+
+.sprite(@url, @position, @width, @height){
+    background-image: url(@url);
+    background-position: @position;
+    width: @width;
+    height: @height;
+}
+
+.sprite-fg(@url){
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-image: url(@url);
+}
+
+.sprite-bg(@url){
+    background-repeat: no-repeat;
+    background-image: url(@url);
+}
